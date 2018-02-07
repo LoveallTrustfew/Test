@@ -19,5 +19,6 @@ from blogpost import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', views.index),
+    url(r'^$', views.index),
+    url(r'^blog/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
 ]
