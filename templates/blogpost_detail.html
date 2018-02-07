@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load comments %}
+{#{% load comments %}#}
 
 {% block head_title %}{{ post.title }}{% endblock %}
 {% block title %}{{ post.title }}{% endblock %}
@@ -14,7 +14,7 @@
         {{post.posted}} - By {{post.author}}
     </p>
 
-{% render_comment_list for post %}
+{#{% render_comment_list for post %}#}
 
 </div>
 {% endblock %}
