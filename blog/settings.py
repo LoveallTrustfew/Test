@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blogpost',
 ]
 
 MIDDLEWARE = [
@@ -89,9 +90,6 @@ DATABASES = {
         'PASSWORD': 'root',                   # Not used with sqlite3.
         'HOST': 'localhost',                # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3306',                         # Set to empty string for default. Not used with sqlite3.
-        'OPTIONS': {
-            "init_command": "SET foreign_key_checks=0;",    # 禁用外健约束
-        },
     },
 
 }
