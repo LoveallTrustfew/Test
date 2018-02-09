@@ -5,7 +5,6 @@ from django.core.urlresolvers import resolve
 from django.http import HttpRequest
 from django.test import TestCase
 
-from blogpost.views import index, view_post
 from blogpost.models import Blogpost
 from blogpost.views import index, view_post
 
@@ -30,5 +29,27 @@ class BlogpostTest(TestCase):
                                 posted=datetime.now)
         response = self.client.get('/blog/this_is_a_test.html')
         self.assertIn(b'This is a blog', response.content)
+
+from django.test import LiveServerTestCase
+from selenium import webdriver
+
+class HomepageTestCase(LiveServerTestCase):
+    def setUp(self):
+        self.selenium = webdriver.Firefox()
+        self.selenium.maximize_window()
+        super(HomepageTestCase, self).setUp()
+
+    def tearDown(self):
+        self.selenium.quit()
+        super(HomepageTestCase, self).tearDown()
+
+    def test_visit_homepage(self):
+        self.selenium.get(
+            '%s%s' % (self.live_server_url,  "/")
+        )
+
+        self.assertIn("Welcome to my blog", self.selenium.title)
+
+
 
 
