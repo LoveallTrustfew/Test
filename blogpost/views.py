@@ -19,6 +19,6 @@ def view_post(request, slug):
 
 
 
-d
+
 
 
