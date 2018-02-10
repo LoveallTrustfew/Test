@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # 'django.contrib.contenttypes',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django_comments',
 ]
 
 MIDDLEWARE = [
