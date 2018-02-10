@@ -22,5 +22,4 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^blog/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
-
 ]
